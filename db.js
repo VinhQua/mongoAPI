@@ -4,7 +4,7 @@ let dbConnection
 
 module.exports = {
     connectToDB:(cb)=>{
-        const URI ='mongodb+srv://vinhqua:Quang123@cluster0.uvd1bzz.mongodb.net/bookstore'
+        const URI ='mongodb+srv://vinhqua:Quang123@cluster0.uvd1bzz.mongodb.net/bookstore?retryWrites=true&w=majority'
         MongoClient.connect(URI,{serverApi:{version:ServerApiVersion.v1,strict:true,deprecationErrors:true}})
         .then(client=>{
             dbConnection= client.db()
